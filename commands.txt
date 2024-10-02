@@ -1,0 +1,73 @@
+pip install -r requirements.txt
+
+python llm-prompter.py 3 ./vast_test.csv ./res/l318-t7.csv meta-llama/Meta-Llama-3.1-8B 0.6 1
+python llm-prompter.py 3 ./vast_test.csv ./res/l318i-t7.csv meta-llama/Meta-Llama-3.1-8B-Instruct 0.6 2
+
+python llm-prompter.py 3 ./vast_test.csv ./res/l308-t7.csv meta-llama/Meta-Llama-3-8B 0.6 3
+python llm-prompter.py 3 ./vast_test.csv ./res/l308i-t7.csv meta-llama/Meta-Llama-3-8B-Instruct 0.6 4
+
+python llm-prompter.py 3 ./vast_test.csv ./res/l3170-t7.csv meta-llama/Meta-Llama-3.1-70B 0.6 5
+python llm-prompter.py 3 ./vast_test.csv ./res/l3170i-t7.csv meta-llama/Meta-Llama-3.1-70B-Instruct 0.6 6
+
+python llm-prompter.py 3 ./vast_test.csv ./res/l3070-t7.csv meta-llama/Meta-Llama-3-70B 0.6 7
+python llm-prompter.py 3 ./vast_test.csv ./res/l3070i-t7.csv meta-llama/Meta-Llama-3-70B-Instruct 0.6 8
+
+python llm-prompter.py 3 ./vast_test.csv ./res/m073-t7.csv mistralai/Mistral-7B-v0.3 0.6 9
+python llm-prompter.py 3 ./vast_test.csv ./res/m073i-t7.csv mistralai/Mistral-7B-Instruct-v0.3 0.6 10
+
+python llm-prompter.py 3 ./vast_test.csv ./res/m871-t7.csv mistralai/Mixtral-8x7B-v0.1 0.6 11
+python llm-prompter.py 3 ./vast_test.csv ./res/m871i-t7.csv mistralai/Mixtral-8x7B-Instruct-v0.1 0.6 12
+
+python llm-prompter.py 3 ./vast_test.csv ./res/p3m4i-t7.csv microsoft/Phi-3-medium-4k-instruct 0.6 13
+
+python llm-prompter.py 3 ./vast_test.csv ./res/g22-t7.csv google/gemma-2-2b 0.6 14
+python llm-prompter.py 3 ./vast_test.csv ./res/g22it-t7.csv google/gemma-2-2b-it 0.6 15
+
+python llm-prompter.py 3 ./vast_test.csv ./res/g29-t7.csv google/gemma-2-9b 0.6 16
+python llm-prompter.py 3 ./vast_test.csv ./res/g29it-t7.csv google/gemma-2-9b-it 0.6 17
+
+
+python debator_llms.py ./res/opinions/l31-70bI.csv ./a.csv google/gemma-2-27b-it 0 0.3 1
+python debator_llms.py ./res/opinions/l31-70bI.csv ./b.csv google/gemma-2-27b-it 1 0.3 2
+python debator_llms.py ./res/opinions/l31-70bI.csv ./c.csv meta-llama/Meta-Llama-3.1-70B-Instruct 0 0.3 3
+python debator_llms.py ./res/opinions/l31-70bI.csv ./d.csv meta-llama/Meta-Llama-3.1-70B-Instruct 1 0.3 4
+
+python debator_llms.py ./res/opinions/g29i.csv ./a.csv meta-llama/Meta-Llama-3.1-8B-Instruct 0 0.3 13
+
+python debator_llms.py ./res/opinions/g29i.csv ./b.csv meta-llama/Meta-Llama-3.1-8B-Instruct 1 0.3 14
+
+python debator_llms.py ./res/opinions/p3mi.csv ./c.csv meta-llama/Meta-Llama-3.1-8B-Instruct 0 0.3 15
+
+python debator_llms.py ./res/opinions/p3mi.csv ./d.csv meta-llama/Meta-Llama-3.1-8B-Instruct 1 0.3 16
+
+python debator_llms.py ./res/opinions/merged_output.csv ./c.csv meta-llama/Meta-Llama-3.1-8B-Instruct 0 0.3 17
+
+python debator_llms.py ./res/opinions/merged_output.csv ./d.csv meta-llama/Meta-Llama-3.1-8B-Instruct 1 0.3 18
+
+python debator_llms.py ./res/opinions/p3mi.csv ./e.csv google/gemma-2-2b-it 0 0.3 19
+
+python debator_llms.py ./res/opinions/p3mi.csv ./f.csv google/gemma-2-2b-it 1 0.3 20
+
+python debator_llms.py ./res/opinions/merged_output.csv ./g.csv google/gemma-2-2b-it 0 0.3 21
+
+python debator_llms.py ./res/opinions/merged_output.csv ./h.csv google/gemma-2-2b-it 1 0.3 22
+
+
+
+python debator_llms.py ./res/opinions/g227i.csv ./res/g27-l3170.csv meta-llama/Meta-Llama-3.1-70B-Instruct 0 0.3 23
+python debator_llms.py ./res/opinions/g227i.csv ./res/g27-l3170.csv meta-llama/Meta-Llama-3.1-70B-Instruct 1 0.3 24
+
+python debator_llms.py ./res/opinions/p3mi.csv ./res/p-l3170.csv meta-llama/Meta-Llama-3.1-70B-Instruct 0 0.3 25
+python debator_llms.py ./res/opinions/p3mi.csv ./res/p-l3170.csv meta-llama/Meta-Llama-3.1-70B-Instruct 1 0.3 26
+
+python debator_llms.py ./res/opinions/merged_output.csv ./res/mo-l3170.csv meta-llama/Meta-Llama-3.1-70B-Instruct 0 0.3 27
+python debator_llms.py ./res/opinions/merged_output.csv ./res/mo-l3170.csv meta-llama/Meta-Llama-3.1-70B-Instruct 1 0.3 28
+
+python debator_llms.py ./res/opinions/l31-70bI.csv ./res/l31-g227.csv google/gemma-2-27b-it 0 0.3 29
+python debator_llms.py ./res/opinions/l31-70bI.csv ./res/l31-g227.csv google/gemma-2-27b-it 1 0.3 30
+
+python debator_llms.py ./res/opinions/p3mi.csv ./res/p-g227.csv google/gemma-2-27b-it 0 0.3 31
+python debator_llms.py ./res/opinions/p3mi.csv ./res/p-g227.csv google/gemma-2-27b-it 1 0.3 32
+
+python debator_llms.py ./res/opinions/merged_output.csv ./res/mo-g227.csv google/gemma-2-27b-it 0 0.3 33
+python debator_llms.py ./res/opinions/merged_output.csv ./res/mo-g227.csv google/gemma-2-27b-it 1 0.3 34

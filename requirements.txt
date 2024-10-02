@@ -1,0 +1,11 @@
+torch
+transformers
+wandb
+tqdm
+huggingface_hub
+trl
+peft
+einops
+pytest
+TensorRT
+jinja2
