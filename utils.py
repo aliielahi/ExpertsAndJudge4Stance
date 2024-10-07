@@ -205,7 +205,7 @@ def predict_proba(dataset, model, tokenizer, labels, count_first = 30):
 					label_probs = [0.0] * len(labels)
 					for i in range(len(labels_id_)):
 						label_probs[i] += logits[labels_id_[i]]
-					class_probs = F.softmax(torch.tensor(label_probs)).numpy()
+					class_probs = F.softmax(torch.tensor(label_probs), dim=0).numpy()
 					y_pred.append(np.argmax(class_probs))
 					y_pred_proba.append(list(class_probs))
 					found_answer = True
